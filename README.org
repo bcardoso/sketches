@@ -1,0 +1,7 @@
+#+AUTHOR: Bruno Cardoso <cardoso.bc@gmail.com>
+#+DATE: 2024-09-29
+#+STARTUP: indent content
+
+* Random sketches
+
+Learning to sketche with [[https://py5coding.org/][py5]].

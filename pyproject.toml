@@ -1,7 +1,7 @@
 [project]
-name = "genart"
+name = "sketches"
 version = "0.1.0"
-description = "Add your description here"
+description = "Random sketches"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []

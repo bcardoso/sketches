@@ -4,7 +4,7 @@ import yaml
 
 # * Color theme
 
-base16_yaml = "/home/bruno/bin/git/base16-default-schemes/ocean.yaml"
+base16_yaml = "colors/ocean.yaml"
 
 def load_base16_palette (file_path):
     with open(file_path, 'r') as f:
@@ -58,16 +58,19 @@ def setup():
     py5.frame_rate(8)
     for x in range(0, py5.width, tile_size):
         for y in range(0, py5.height, tile_size):
-            tile_square(x, y, tile_size, color_picker(range_a=9))
-            tile_triangle(x, y, tile_size, color_picker(7), r=0)
+            tile_square(x, y, tile_size,
+                        color_picker(range_a=9))
+            tile_triangle(x, y, tile_size,
+                          color_picker(range_a=2, range_b=8),
+                          random.randint(0, 3))
 
     py5.save('/tmp/static_sketch.png')
 
-def draw():
-    for x in range(0, py5.width, tile_size):
-        for y in range(0, py5.height, tile_size):
-            tile_square(x, y, tile_size, color_picker(range_a=9))
-            tile_triangle(x, y, tile_size,
-                          color_picker(any=True), random.randint(0, 3))
+# def draw():
+#     for x in range(0, py5.width, tile_size):
+#         for y in range(0, py5.height, tile_size):
+#             tile_square(x, y, tile_size, color_picker(range_a=9))
+#             tile_triangle(x, y, tile_size,
+#                           color_picker(any=True), random.randint(0, 3))
 
 py5.run_sketch()
