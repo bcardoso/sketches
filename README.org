@@ -4,4 +4,4 @@
 
 * Random sketches
 
-Learning to sketche with [[https://py5coding.org/][py5]].
+Learning to sketch with [[https://py5coding.org/][py5]].
