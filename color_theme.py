@@ -46,10 +46,10 @@ def list_colors (name:str|None=None):
         return color_palette
 
 def print_colors (name:str|None=None):
-    for c in enumerate(list_colors(name or theme_name)):
-        print("%2s: %s" % (c[0], c[1]))
+    for i, c in enumerate(list_colors(name or theme_name)):
+        print("%2s: %s" % (i, c))
 
-def pick_color (n=1, any=False, range_a=None, range_b=None):
+def pick_color (n=0, any=False, range_a=None, range_b=None):
     if any or isinstance(range_a, int) or isinstance(range_b, int):
         return random.choice(color_palette[range_a:range_b])
     else:
