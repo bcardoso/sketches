@@ -7,7 +7,7 @@ set_theme("ocean")
 tile_size = 40
 
 def setup():
-    py5.size(520, 520)
+    py5.size(600, 600)
     py5.no_stroke()
     py5.frame_rate(8)
     for x in range(0, py5.width, tile_size):
