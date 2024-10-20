@@ -11,6 +11,12 @@ def tile_square (x, y, size, fill):
     py5.stroke(fill)
     py5.rect(x, y, size, size)
 
+def tile_square_depth (x, y, size, f0, f1, scale=10, depth=7):
+    for d in range(depth+1):
+        tile_square(x+(d*scale), y+(d*scale),
+                    size-(2*d*scale),
+                    f0 if d%2==0 else f1)
+
 def tile_triangle (x, y, size, fill, r=0):
     py5.fill(fill)
     py5.stroke(fill)
