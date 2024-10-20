@@ -1,6 +1,5 @@
 import py5
-
-tile_size = 50
+import math
 
 def tile_grid (width, height, size):
     for x in range(0, width, size):
@@ -49,3 +48,18 @@ def tile_line (x, y, size, color, weight=3, r=0):
     else:
         py5.line(x,y+size/2, x+size/2,y+size)
         py5.line(x+size/2,y, x+size,y+size/2)
+
+def tile_bits (x, y, size, bits, c0, c1, cs=None):
+    part = math.floor(math.sqrt(len(bits)))
+    size = size//part
+    pos = 0
+    for i in range(part):
+        for j in range(part):
+            if bits[-1*pos]=='1':
+                c = c1
+            else:
+                c = c0
+            py5.fill(c)
+            py5.stroke(cs or c)
+            py5.rect(x + i*size, y + j*size, size, size)
+            pos += 1
