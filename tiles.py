@@ -10,7 +10,7 @@ def tile_grid (width, height, size):
 def tile_square (x, y, size, fill):
     py5.fill(fill)
     py5.stroke(fill)
-    py5.rect(x, y, x+size, y+size)
+    py5.rect(x, y, size, size)
 
 def tile_triangle (x, y, size, fill, r=0):
     py5.fill(fill)

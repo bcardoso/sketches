@@ -51,6 +51,6 @@ def print_colors (name:str|None=None):
 
 def pick_color (n=0, any=False, range_a=None, range_b=None):
     if any or isinstance(range_a, int) or isinstance(range_b, int):
-        return random.choice(color_palette[range_a:range_b])
+        return random.choice(color_palette[range_a:range_b+1])
     else:
         return color_palette[n]
