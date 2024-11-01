@@ -5,3 +5,10 @@ description = "Random sketches"
 readme = "README.org"
 requires-python = ">=3.12"
 dependencies = []
+
+[tool.basedpyright]
+venvPath = "."
+venv = ".venv"
+reportMissingImports = "error"
+reportMissingTypeStubs = false
+reportUnknownMemberType = false
