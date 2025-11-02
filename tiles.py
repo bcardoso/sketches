@@ -1,7 +1,7 @@
 import math
 from dataclasses import dataclass
-from textwrap import fill
 
+# from textwrap import fill
 import py5
 
 
@@ -26,27 +26,37 @@ class Tile:
     size: float
     fill_color: str | None = None
 
-    def square(self, color: str | None = None) -> None:
-        """Draw squared tile."""
+    def square(
+        self,
+        color: str | None = None,
+        x: float | None = None,
+        y: float | None = None,
+        size: float | None = None,
+    ) -> None:
+        """Draw a square within tile."""
         py5.fill(color or self.fill_color)
         py5.stroke(color or self.fill_color)
-        py5.rect(self.x, self.y, self.size, self.size)
+        py5.rect(
+            x or self.x, y or self.y, size or self.size, size or self.size
+        )
 
     def layered_squares(
         self,
         fill_color1: str,
         fill_color2: str,
-        scale: float = 10.0,
-        layers: int = 7,
+        scale: float = 2.5,
+        layers: int = 10,
     ) -> None:
         """Draw layered squares within tile."""
-        for d in range(layers + 1):
-            self.square(
-                self.x + (d * scale),
-                self.y + (d * scale),
-                self.size - (2 * d * scale),
-                fill_color1 if d % 2 == 0 else fill_color2,
-            )
+        for layer in range(0, layers):
+            size = self.size - (2 * layer * scale)
+            if size > 0:
+                self.square(
+                    fill_color1 if (layer % 2) == 0 else fill_color2,
+                    self.x + (layer * scale),
+                    self.y + (layer * scale),
+                    size,
+                )
 
     def triangle(self, color: str, r: int = 0) -> None:
         """Draw a triangle within tile."""
