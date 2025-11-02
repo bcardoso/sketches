@@ -1,0 +1,11 @@
+#+TITLE:     Tiles 600px 2024-10
+#+DATE:      [2025-11-02]
+#+STARTUP:   indent content
+
+* Tiles 600px 2024-10
+
+[[file:202409282359.png]]
+
+First experiments with tiles. 11 sketches.
+
+To maintain reproducibility, the original =tiles=, =series=, and =color_theme= modules are being preserved here in their current form (rough and poorly written). They have been refactored at the project root.
