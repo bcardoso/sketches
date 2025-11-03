@@ -71,10 +71,14 @@ class Palette:
         max = len(self.colors) - 1
         return self.colors[n if n <= max else max]
 
-    def random(self) -> str:
-        """Return a random color."""
-        return random.choice(self.colors)
-
-    def range(self, a: int | None = None, b: int | None = None) -> str:
+    def random(self, a: int | None = None, b: int | None = None) -> str:
         """Return a random color between index A and B."""
         return random.choice(self.colors[a:b])
+
+    def range(self, a: int | None = None, b: int | None = None) -> list[str]:
+        """Return a list of colors between index A and B."""
+        return self.colors[a:b]
+
+    def print(self) -> None:
+        """Print the numbered list of colors."""
+        print_colors(self.name)
