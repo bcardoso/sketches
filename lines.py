@@ -113,7 +113,9 @@ class Tree:
         if self.symmetric:
             length = self.length * self.length_reduction
         else:
-            length = self.length * random.uniform(0.5, 0.8)
+            lr = self.length_reduction
+            factor = lr * 0.1
+            length = self.length * random.uniform(lr - factor, lr + factor)
         return length
 
     def branches_angles(self) -> list[float]:
@@ -122,7 +124,7 @@ class Tree:
             angles = divide_points(self.branching_angle, self.branches_num)
         else:
             angles = divide_points(
-                self.branching_angle, random.randint(2, self.branches_num)
+                self.branching_angle, random.randint(3, self.branches_num)
             )
         return angles
 
